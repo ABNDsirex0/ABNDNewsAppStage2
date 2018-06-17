@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/title_textView"
-        style="?android:attr/textAppearanceLarge"
+        style="?android:attr/textAppearanceListItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,6 +17,7 @@
 
     <TextView
         android:id="@+id/section_textView"
+        style="?android:attr/textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -25,16 +26,20 @@
         tools:text="Section" />
 
     <TextView
+        android:textAlignment="textEnd"
         android:id="@+id/date_textView"
+        style="?android:attr/textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/title_textView"
         app:layout_constraintTop_toBottomOf="@+id/title_textView"
-        tools:text="date" />
+        tools:text="date"
+        android:gravity="end" />
 
     <TextView
         android:id="@+id/author_textView"
+        style="?android:attr/textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
