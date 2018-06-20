@@ -10,6 +10,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,7 +24,8 @@ import java.util.List;
 
 public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<List<Article>> {
     ArticlesAdapter articleListAdapter;
-    private static final String QUERY_URL = "https://content.guardianapis.com/search?api-key=test";
+    static String apiKey = BuildConfig.ApiKey;
+    private static final String QUERY_URL = "https://content.guardianapis.com/search?api-key="+apiKey;
     ProgressBar progressBar;
     TextView errorMessageView;
     ListView articleListView;
@@ -36,7 +38,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<L
         progressBar = findViewById(R.id.progress_bar);
         errorMessageView = findViewById(R.id.error_message_view);
         articleListView = findViewById(R.id.article_list);
-
+        Log.v("KEY",apiKey);
         //set visibility elements on main activity
         progressBar.setVisibility(View.VISIBLE);
         errorMessageView.setVisibility(View.GONE);
