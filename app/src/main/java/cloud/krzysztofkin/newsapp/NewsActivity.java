@@ -122,7 +122,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<L
         uriBuilder.appendQueryParameter("page-size", pageSize);
         uriBuilder.appendQueryParameter("order-by", order);
 
-        Log.v("URL",uriBuilder.toString());
+        Log.v("URL", uriBuilder.toString());
         return new ArticlesLoader(this, uriBuilder.toString());
     }
 

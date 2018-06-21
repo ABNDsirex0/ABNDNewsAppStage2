@@ -50,14 +50,14 @@ class ArticlesAdapter extends ArrayAdapter<Article> {
 
         //format and set date and time
         String dateTime = currentArticle.getWebPublicationDate();
-        dateTime = dateTime.replace('T',' ');
-        dateTime= dateTime.replace("Z","");
+        dateTime = dateTime.replace('T', ' ');
+        dateTime = dateTime.replace("Z", "");
         dateTextView.setText(dateTime);
 
         //if author is not given disable visibility of textview, listitem will be short
-        if(currentArticle.getAuthorName().isEmpty()){
-          authorTextView.setVisibility(View.GONE);
-        }else {
+        if (currentArticle.getAuthorName().isEmpty()) {
+            authorTextView.setVisibility(View.GONE);
+        } else {
             authorTextView.setVisibility(View.VISIBLE);
             authorTextView.setText(currentArticle.getAuthorName());
         }

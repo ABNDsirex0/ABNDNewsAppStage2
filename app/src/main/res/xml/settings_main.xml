@@ -5,9 +5,9 @@
         android:defaultValue="@string/settings_page_size_default"
         android:inputType="number"
         android:key="@string/settings_page_size_key"
+        android:maxLength="2"
         android:selectAllOnFocus="true"
-        android:title="@string/settings_page_size_label"
-        android:maxLength="2"/>
+        android:title="@string/settings_page_size_label" />
 
     <ListPreference
         android:defaultValue="@string/settings_order_by_default"
