@@ -26,7 +26,8 @@ import java.util.List;
 
 public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<List<Article>> {
     ArticlesAdapter articleListAdapter;
-    private static String API_KEY = "test";
+    //private static String API_KEY = "test";
+    static String API_KEY = BuildConfig.ApiKey;
     private static final String QUERY_URL = "http://content.guardianapis.com/search";
     ProgressBar progressBar;
     TextView errorMessageView;
@@ -119,6 +120,8 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<L
 
         // Append query parameter and its value.
         uriBuilder.appendQueryParameter("api-key", API_KEY);
+        uriBuilder.appendQueryParameter("show-tags","contributor");
+        //TODO:category
         uriBuilder.appendQueryParameter("page-size", pageSize);
         uriBuilder.appendQueryParameter("order-by", order);
 

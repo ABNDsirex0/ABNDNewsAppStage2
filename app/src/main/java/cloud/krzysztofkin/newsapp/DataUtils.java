@@ -81,12 +81,20 @@ public class DataUtils {
                 if (longTitle.contains("|")) {
                     String[] parts = longTitle.split("\\| ");
                     webTitle = parts[0];
-                    authorName = parts[1];
+                    //authorName = parts[1];
                 } else {
                     webTitle = longTitle;
-                    authorName = "";
+                    //authorName = "";
                 }
-
+                JSONArray tagsArray = jsonArticle.getJSONArray("tags");
+                authorName = "";
+                for(int tagNr = 0;tagNr<tagsArray.length();tagNr++){
+                    String tagType = tagsArray.getJSONObject(tagNr).getString("type");
+                    String authorWebTitle = tagsArray.getJSONObject(tagNr).getString("webTitle");
+                    if(tagType.equals("contributor")){
+                        authorName = authorName+" "+authorWebTitle;
+                    }
+                }
                 currentArticle = new Article(webTitle, sectionName, authorName, webPublicationDate, webUrl);
                 articles.add(currentArticle);
             }
