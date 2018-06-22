@@ -25,7 +25,29 @@
     <string name="settings_order_by_oldest_label">Oldest</string>
     <string name="settings_order_by_oldest_value" translatable="false">oldest</string>
 
-    <!-- Label for order-by oldest option -->
+    <!-- Label for order-by Relevance option -->
     <string name="settings_order_by_relevance_label">Relevance</string>
     <string name="settings_order_by_relevance_value" translatable="false">relevance</string>
+
+    <!-- Strings For Section Preference  -->
+
+    <string name="settings_topic_label">Topic</string>
+    <string name="settings_topic_key" translatable="false">topic</string>
+    <string name="settings_topic_default" translatable="false">@string/settings_topic_all_value</string>
+
+    <!-- Label for all topics -->
+    <string name="settings_topic_all_label">All</string>
+    <string name="settings_topic_all_value" translatable="false">all</string>
+
+    <!-- Label for Sport section option -->
+    <string name="settings_topic_sport_label">Sport</string>
+    <string name="settings_topic_sport_value" translatable="false">sport</string>
+
+    <!-- Label for technology section option -->
+    <string name="settings_topic_technology_label">Technology</string>
+    <string name="settings_topic_technology_value" translatable="false">technology</string>
+
+    <!-- Label for football section option -->
+    <string name="settings_topic_football_label">Football</string>
+    <string name="settings_topic_football_value" translatable="false">football</string>
 </resources>

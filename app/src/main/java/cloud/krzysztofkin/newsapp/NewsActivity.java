@@ -41,7 +41,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<L
         progressBar = findViewById(R.id.progress_bar);
         errorMessageView = findViewById(R.id.error_message_view);
         articleListView = findViewById(R.id.article_list);
-        Log.v("KEY", API_KEY);
         //set visibility elements on main activity
         progressBar.setVisibility(View.VISIBLE);
         errorMessageView.setVisibility(View.GONE);
@@ -112,7 +111,10 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<L
         String order = sharedPrefs.getString(
                 getString(R.string.settings_order_by_key),
                 getString(R.string.settings_order_by_default)
-                );
+        );
+        String topic = sharedPrefs.getString(
+                getString(R.string.settings_topic_key),
+                getString(R.string.settings_topic_default));
         // parse breaks apart the URI string that's passed into its parameter
         Uri baseUri = Uri.parse(QUERY_URL);
         // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
@@ -120,8 +122,10 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<L
 
         // Append query parameter and its value.
         uriBuilder.appendQueryParameter("api-key", API_KEY);
-        uriBuilder.appendQueryParameter("show-tags","contributor");
-        //TODO:category
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
+        if(!topic.equals("all")){
+            uriBuilder.appendQueryParameter("section",topic);
+        }
         uriBuilder.appendQueryParameter("page-size", pageSize);
         uriBuilder.appendQueryParameter("order-by", order);
 

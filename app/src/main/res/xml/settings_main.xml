@@ -15,4 +15,10 @@
         android:entryValues="@array/settings_order_by_values"
         android:key="@string/settings_order_by_key"
         android:title="@string/settings_order_by_label" />
+    <ListPreference
+        android:defaultValue="@string/settings_topic_default"
+        android:entries="@array/settings_topic_labels"
+        android:entryValues="@array/settings_topic_values"
+        android:key="@string/settings_topic_key"
+        android:title="@string/settings_topic_label" />
 </PreferenceScreen>

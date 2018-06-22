@@ -81,10 +81,8 @@ public class DataUtils {
                 if (longTitle.contains("|")) {
                     String[] parts = longTitle.split("\\| ");
                     webTitle = parts[0];
-                    //authorName = parts[1];
                 } else {
                     webTitle = longTitle;
-                    //authorName = "";
                 }
                 JSONArray tagsArray = jsonArticle.getJSONArray("tags");
                 authorName = "";
