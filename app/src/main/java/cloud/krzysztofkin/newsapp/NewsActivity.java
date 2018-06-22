@@ -26,8 +26,7 @@ import java.util.List;
 
 public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<List<Article>> {
     ArticlesAdapter articleListAdapter;
-    //private static String API_KEY = "test";
-    static String API_KEY = BuildConfig.ApiKey;
+    private static String API_KEY = "test";
     private static final String QUERY_URL = "http://content.guardianapis.com/search";
     ProgressBar progressBar;
     TextView errorMessageView;
